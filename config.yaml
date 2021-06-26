@@ -1,0 +1,25 @@
+---
+  # This YAML configuration specifies a server with two volumes and two users
+  server:
+    instance_type: t2.micro
+    ami_type: ami-0e01ce4ee18447327
+    architecture: x86_64
+    root_device_type: ebs
+    virtualization_type: hvm
+    min_count: 1
+    max_count: 1
+    volumes:
+      - device: /dev/xvda
+        size_gb: 10
+        type: ext4
+        mount: /
+      - device: /dev/xvdf
+        size_gb: 100
+        type: xfs
+        mount: /data
+    users:
+      - login: user1
+        ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCRSn9OXFaU7Bk1sh0vySdEEWOJiVmoBgXFYicnpC5C7vjyoxTN0Dg9M0mkGXXsOxaWc4eRjyEjyyNN1UpFikpdJqav67ph5bNN32ao6lsHxPyYhHl2sBCU2/AZQJQSeBcDrnS8gK6LY2sqfAU4A4kZbYFl/yJ2hN+OZ6ii6VKoKj4NmEdwM1gqgdB0rqkfpmap7sl/TRwzemuXGTZniY+FW5UhO2ZRhpQOjm/oth5Xq3Wx4z3iTnTQTGmSglR0fw0Z2dma9uEDxsfvr347rOgd4U/6p/evL72+zWEnYNMB6i/32XX2Ecf37iJiu92lcTmC73OWvumXz+EQLorpyJ21 imported-openssh-key user1@localhost
+      - login: user2
+        ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCRSn9OXFaU7Bk1sh0vySdEEWOJiVmoBgXFYicnpC5C7vjyoxTN0Dg9M0mkGXXsOxaWc4eRjyEjyyNN1UpFikpdJqav67ph5bNN32ao6lsHxPyYhHl2sBCU2/AZQJQSeBcDrnS8gK6LY2sqfAU4A4kZbYFl/yJ2hN+OZ6ii6VKoKj4NmEdwM1gqgdB0rqkfpmap7sl/TRwzemuXGTZniY+FW5UhO2ZRhpQOjm/oth5Xq3Wx4z3iTnTQTGmSglR0fw0Z2dma9uEDxsfvr347rOgd4U/6p/evL72+zWEnYNMB6i/32XX2Ecf37iJiu92lcTmC73OWvumXz+EQLorpyJ21 imported-openssh-key user2@localhost
+    key_file: Fetch_DevOps_Exercise.pem
